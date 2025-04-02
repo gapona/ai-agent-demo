@@ -2,6 +2,8 @@ import { config } from 'dotenv';
 import OpenAI from 'openai';
 import fs from 'fs';
 import fetch from 'node-fetch';
+import ffmpegPath from 'ffmpeg-static';
+import fluentFfmpeg from 'fluent-ffmpeg';
 
 config();
 
@@ -69,21 +71,31 @@ async function sendImageToGemini(base64Image: string, prompt: string): Promise<s
         ],
     };
 
-    const res = await fetch(`${GEMINI_URL}?key=${GEMINI_API_KEY}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(body),
-    });
+    for (let attempt = 0; attempt < 3; attempt++) {
+        const res = await fetch(`${GEMINI_URL}?key=${GEMINI_API_KEY}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(body),
+        });
 
-    if (!res.ok) {
-        console.error(`❌ Gemini API Error: ${res.statusText}`);
-        const error = await res.text();
-        console.error(error);
-        process.exit(1);
+        if (res.status === 429) {
+            console.warn(`⏳ Gemini quota hit. Retrying in 30s (attempt ${attempt + 1}/3)...`);
+            await new Promise(r => setTimeout(r, 30000));
+            continue;
+        }
+
+        if (!res.ok) {
+            console.error(`❌ Gemini API Error: ${res.statusText}`);
+            const error = await res.text();
+            console.error(error);
+            process.exit(1);
+        }
+
+        const json = await res.json();
+        return json.candidates?.[0]?.content?.parts?.[0]?.text || '⚠️ No response from Gemini';
     }
 
-    const json = await res.json();
-    return json.candidates?.[0]?.content?.parts?.[0]?.text || '⚠️ No response from Gemini';
+    return '❌ Gemini API failed after retries.';
 }
 
 async function askLLM(featureDescription: string) {
@@ -98,10 +110,58 @@ async function askLLM(featureDescription: string) {
     console.log(response.choices[0].message.content);
 }
 
+async function extractFrames(videoPath: string, outputDir: string): Promise<void> {
+    if (!fs.existsSync(outputDir)) {
+        fs.mkdirSync(outputDir);
+    }
+
+    return new Promise((resolve, reject) => {
+        fluentFfmpeg(videoPath)
+            .setFfmpegPath(ffmpegPath!)
+            .outputOptions(['-r 1'])
+            .output(`${outputDir}/frame%04d.png`)
+            .on('end', () => {
+                console.log('✅ Frames extracted.');
+                resolve();
+            })
+            .on('error', (err) => {
+                console.error('❌ ffmpeg error:', err.message);
+                reject(err);
+            })
+            .run();
+    });
+}
+
+async function analyzeVideo(videoPath: string): Promise<string> {
+    const tempDir = './temp_frames';
+    await extractFrames(videoPath, tempDir);
+
+    const frameFiles = fs.readdirSync(tempDir)
+        .filter(file => file.endsWith('.png'))
+        .slice(0, 5); // ограничиваем до 5 кадров
+
+    let analyzedText = '';
+
+    for (const frameFile of frameFiles) {
+        const framePath = `${tempDir}/${frameFile}`;
+        const base64 = await imageToBase64(framePath);
+        const geminiPrompt = `Analyze this frame and describe the user action.`;
+
+        const result = await sendImageToGemini(base64, geminiPrompt);
+        analyzedText += result + '\n';
+
+        await new Promise(r => setTimeout(r, 5000)); // пауза между запросами 5 сек
+    }
+
+    fs.rmSync(tempDir, { recursive: true, force: true });
+
+    return analyzedText;
+}
+
 async function main() {
     const args = process.argv.slice(2);
     if (!args.length) {
-        console.error('❌ Please provide a feature description or use --image <path>');
+        console.error('❌ Please provide a feature description or use --image <path> or --video <path>');
         process.exit(1);
     }
 
@@ -117,6 +177,14 @@ async function main() {
         const base64 = await imageToBase64(imagePath);
         const geminiPrompt = `You are a QA engineer. Analyze this UI and generate 5 test cases based on visible elements. Each test case must include:\n- 🧪 Test Case Title\n- 🧭 Steps to Reproduce\n- ✅ Expected Result\nUse Present Simple. Assume this is a modern registration page.`;
         featureDescription = await sendImageToGemini(base64, geminiPrompt);
+    } else if (args[0] === '--video') {
+        const videoPath = args[1];
+        if (!fs.existsSync(videoPath)) {
+            console.error('❌ Video file not found at: ' + videoPath);
+            process.exit(1);
+        }
+        console.log('🎬 Analyzing video using Gemini...');
+        featureDescription = await analyzeVideo(videoPath);
     } else {
         featureDescription = args.join(' ');
     }
