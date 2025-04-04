@@ -6,7 +6,8 @@
     "generate": "dotenv -e config.env -- tsx agents/test-case-generator/Test-case-generator.ts",
     "generate:image": "dotenv -e config.env -- tsx agents/test-case-generator/Test-case-generator.ts --image",
     "generate:video": "dotenv -e config.env -- tsx agents/test-case-generator/Test-case-generator.ts --video",
-    "generate:gherkin": "dotenv -e config.env -- tsx agents/test-case-generator/Test-case-generator.ts --export"
+    "generate:gherkin": "dotenv -e config.env -- tsx agents/test-case-generator/Test-case-generator.ts --export",
+    "generate:steps": "tsx agents/test-case-generator/gherkin/GherkinStepGenerator.ts"
   },
   "dependencies": {
     "dotenv": "^16.4.7",
@@ -15,6 +16,8 @@
     "openai": "^4.91.1"
   },
   "devDependencies": {
+    "@cucumber/cucumber": "^11.2.0",
+    "@types/cucumber": "^6.0.1",
     "@types/fluent-ffmpeg": "^2.1.27",
     "@types/node": "^22.13.17",
     "dotenv-cli": "^8.0.0",
