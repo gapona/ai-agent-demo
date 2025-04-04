@@ -1,0 +1,276 @@
+ Here are the test cases in the format you specified:
+
+- Test Case Title: Accessing Match Information via Homepage Navigation
+  - Steps to Reproduce:
+    - User opens the homepage: `fcbayern.com/en`
+    - User hovers over the "Matches" tab in the navigation bar.
+    - User clicks on the "Matches" tab.
+    - User observes the displayed match schedule and details.
+  - Expected Result:
+    - A page displaying the team's match schedule, dates, times, opponents, and potentially other relevant information is shown.
+
+
+- Test Case Title: Navigating to the Online Store from Homepage
+  - Steps to Reproduce:
+    - User opens the homepage: `fcbayern.com/en`
+    - User scrolls to the top of the page.
+    - User clicks on the "Online Store" button in the top right corner.
+  - Expected Result:
+    - The official FC Bayern Munich online store opens in a new tab or the same tab, depending on the website's configuration.
+
+
+- Test Case Title: Checking Language Options
+  - Steps to Reproduce:
+    - User opens the homepage: `fcbayern.com/en`
+    - User clicks on the "English" dropdown menu in the navigation bar.
+    - User selects a different language from the dropdown list (e.g., German).
+  - Expected Result:
+    - The entire website's content is translated into the selected language.
+
+
+- Test Case Title: Accessing Club Information
+  - Steps to Reproduce:
+    - User opens the homepage: `fcbayern.com/en`
+    - User clicks on the "Club" tab in the main navigation bar.
+  - Expected Result:
+    - A page with information about the club's history, structure, or other relevant details is displayed.
+
+
+- Test Case Title: Searching using Search Bar
+  - Steps to Reproduce:
+    - User opens the homepage: `fcbayern.com/en`
+    - User types "Lewandowski" into the search bar.
+    - User presses the Enter key.
+  - Expected Result:
+    - Search results related to "Lewandowski" are displayed, potentially including news articles, player profiles, or other relevant content.
+
+
+- Test Case Title: Visiting the Allianz Arena Page
+  - Steps to Reproduce:
+    - User opens the homepage: `fcbayern.com/en`
+    - User clicks on "Allianz Arena" in the top navigation bar.
+  - Expected Result:
+    - A page with information about the Allianz Arena (stadium) is displayed.
+
+
+- Test Case Title: Accessing FC Bayern TV
+  - Steps to Reproduce:
+    - User opens the homepage: `fcbayern.com/en`
+    - User clicks on the "FC Bayern TV" tab in the navigation bar.
+  - Expected Result:
+    - A page containing FC Bayern TV content is loaded, potentially requiring further navigation or login.
+
+
+- Test Case Title: Checking Contact Information
+  - Steps to Reproduce:
+    - User opens the homepage: `fcbayern.com/en`
+    - User clicks on the "Contact" link in the top right corner.
+  - Expected Result:
+    - A page with contact information for FC Bayern Munich is displayed, possibly including contact forms or email addresses.
+
+
+- Test Case Title: Accessing Fans Section
+  - Steps to Reproduce:
+    - User opens the homepage: `fcbayern.com/en`
+    - User clicks the "Fans" tab in the navigation bar.
+  - Expected Result:
+    - A page is displayed containing information relevant to fans of the club.
+
+
+- Test Case Title: Navigating to Tickets Section
+  - Steps to Reproduce:
+    - User opens the homepage: `fcbayern.com/en`
+    - User clicks on the "Tickets" tab in the main navigation bar.
+  - Expected Result:
+    - A page about ticket purchasing or information about upcoming matches and ticket availability is shown.
+
+
+- Test Case Title: Accessing the Online Store from Homepage
+  - Steps to Reproduce:
+    - User opens the browser and navigates to `fcbayern.com/en`.
+    - User waits for the homepage to fully load.
+    - User scrolls to the bottom of the page.
+    - User clicks the "Online Store" button.
+  - Expected Result:
+    - The FC Bayern Munich online store opens in a new tab or the same tab.
+
+- Test Case Title: Navigate to Matches Section
+  - Steps to Reproduce:
+    - User opens the browser and navigates to `fcbayern.com/en`.
+    - User waits for the homepage to fully load.
+    - User clicks on the "Matches" tab in the navigation bar.
+  - Expected Result:
+    - The page displays the FC Bayern Munich match schedule or related information.
+
+- Test Case Title:  Searching from Homepage
+  - Steps to Reproduce:
+    - User opens the browser and navigates to `fcbayern.com/en`.
+    - User waits for the homepage to fully load.
+    - User types "Lewandowski" into the search bar.
+    - User clicks the search icon.
+  - Expected Result:
+    - The search results page displays information related to "Lewandowski".
+
+- Test Case Title: View FC Bayern TV from Homepage
+  - Steps to Reproduce:
+    - User opens the browser and navigates to `fcbayern.com/en`.
+    - User waits for the homepage to fully load.
+    - User clicks on the "FC Bayern TV" tab in the navigation bar.
+  - Expected Result:
+    - The page displays content related to FC Bayern TV.
+
+- Test Case Title: Accessing Allianz Arena Info
+  - Steps to Reproduce:
+    - User opens the browser and navigates to `fcbayern.com/en`.
+    - User waits for the homepage to fully load.
+    - User clicks on the "Allianz Arena" link in the header.
+  - Expected Result:
+    - A new page opens with information about the Allianz Arena.
+
+- Test Case Title: Language Change
+  - Steps to Reproduce:
+    - User opens the browser and navigates to `fcbayern.com/en`.
+    - User waits for the homepage to fully load.
+    - User clicks on the "English" dropdown menu.
+    - User selects "Deutsch" from the dropdown menu.
+  - Expected Result:
+    - The page content changes to German.
+
+- Test Case Title: Accessing Contact Information
+  - Steps to Reproduce:
+    - User opens the browser and navigates to `fcbayern.com/en`.
+    - User waits for the homepage to fully load.
+    - User clicks on the "Contact" link in the header.
+  - Expected Result:
+    - A new page opens with contact information for FC Bayern Munich.
+
+- Test Case Title: Navigate to the Club Section
+  - Steps to Reproduce:
+    - User opens the browser and navigates to `fcbayern.com/en`.
+    - User waits for the homepage to fully load.
+    - User clicks the "Club" tab from the main navigation.
+  - Expected Result:
+    - The page shows information about the FC Bayern Munich club.
+
+- Test Case Title: Navigate to the Fans Section
+  - Steps to Reproduce:
+    - User opens the browser and navigates to `fcbayern.com/en`.
+    - User waits for the homepage to fully load.
+    - User clicks the "Fans" tab from the main navigation.
+  - Expected Result:
+    - The page shows information related to FC Bayern Munich fans.
+
+- Test Case Title: Navigate to the Tickets Section
+  - Steps to Reproduce:
+    - User opens the browser and navigates to `fcbayern.com/en`.
+    - User waits for the homepage to fully load completely.
+    - User clicks on "Tickets" in the top navigation menu.
+  - Expected Result:
+    - User is directed to the page showing ticket information, availability, and purchasing options.
+
+
+- Test Case Title: Navigate to FC Bayern TV from Homepage
+  - Steps to Reproduce:
+    - User opens the browser and navigates to `fcbayern.com/en`.
+    - User waits for the homepage to fully load.
+    - User clicks on the "FC Bayern TV" tab in the navigation bar.
+  - Expected Result:
+    - User is navigated to the FC Bayern TV section of the website.
+
+- Test Case Title: Access the Online Store from Homepage
+  - Steps to Reproduce:
+    - User opens the browser and navigates to `fcbayern.com/en`.
+    - User waits for the homepage to fully load.
+    - User clicks the "Online Store" button in the top right corner.
+  - Expected Result:
+    - The FC Bayern Online Store opens in a new tab or the same tab, depending on website configuration.
+
+- Test Case Title: Search Functionality
+  - Steps to Reproduce:
+    - User opens the browser and navigates to `fcbayern.com/en`.
+    - User waits for the page to load.
+    - User types "Lewandowski" into the search bar.
+    - User presses Enter.
+  - Expected Result:
+    - The search results page displays information related to "Lewandowski".
+
+- Test Case Title: Language Change
+  - Steps to Reproduce:
+    - User opens the browser and navigates to `fcbayern.com/en`.
+    - User waits for the page to load.
+    - User clicks on the "English" dropdown menu.
+    - User selects "Deutsch" from the dropdown menu.
+  - Expected Result:
+    - The website's language changes to German.
+
+- Test Case Title: Navigate to News Section
+  - Steps to Reproduce:
+    - User opens the browser and goes to `fcbayern.com/en`.
+    - User observes the main navigation bar.
+    - User clicks on the "News" tab in the navigation bar.
+  - Expected Result:
+    - The website displays the latest news articles.
+
+- Test Case Title: Access Allianz Arena Information
+  - Steps to Reproduce:
+    - User opens the browser and navigates to `fcbayern.com/en`.
+    - User waits for the homepage to load.
+    - User clicks on "Allianz Arena" link in the navigation bar.
+  - Expected Result:
+    - A new page opens with information regarding the Allianz Arena.
+
+- Test Case Title: Navigate to "Teams" Section
+  - Steps to Reproduce:
+    - User opens the browser and navigates to `fcbayern.com/en`.
+    - User waits for the homepage to load.
+    - User clicks the "Teams" tab in the navigation bar.
+  - Expected Result:
+    - The page shows information about the different FC Bayern teams.
+
+- Test Case Title: Check Contact Information
+  - Steps to Reproduce:
+    - User opens the browser and navigates to `fcbayern.com/en`.
+    - User waits for the homepage to load.
+    - User clicks on "Contact" in the top navigation bar.
+  - Expected Result:
+    - A page with contact information (e.g., address, email, phone) is displayed.
+
+- Test Case Title: Access Tickets Section
+  - Steps to Reproduce:
+    - User opens the browser and navigates to `fcbayern.com/en`.
+    - User waits for the homepage to load completely.
+    - User clicks on "Tickets" in the top navigation menu.
+  - Expected Result:
+    - User is directed to the page showing ticket information, availability, and purchasing options.
+
+- Test Case Title: View Club Information
+  - Steps to Reproduce:
+    - User opens the browser and navigates to `fcbayern.com/en`.
+    - User waits for the homepage to load.
+    - User clicks on the "Club" tab in the navigation bar.
+  - Expected Result:
+    - The website displays information about the FC Bayern club.
+
+- Test Case Title: Navigate to Champions League News from Homepage
+  - Steps to Reproduce:
+    - User opens the browser and navigates to `fcbayern.com/en/news`
+    - User observes the main navigation bar.
+    - User clicks on the "Champions League" tab.
+  - Expected Result:
+    - The page displays news articles related to the Champions League.
+
+- Test Case Title: Access FC Bayern Women's News
+  - Steps to Reproduce:
+    - User opens `fcbayern.com/en/news` in their browser.
+    - User scrolls down to view available news sections.
+    - User clicks the "FC Bayern Women" news section link.
+  - Expected Result:
+    - The page displays news articles specifically about the FC Bayern Women's team.
+
+- Test Case Title: Search for Specific News Using Search Bar
+  - Steps to Reproduce:
+    - User opens the homepage (`fcbayern.com/en/news`).
+    - User locates the search bar labeled "Search News".
+    - User types "Lewandowski" into the search bar and presses Enter.
+  - Expected Result:
+    - The search results page displays search results containing the term "Lewandowski".

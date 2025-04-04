@@ -1,0 +1,61 @@
+ - Test Case Title: Successful Sign-Up
+  - Steps to Reproduce:
+    - User opens the PrimeWin homepage.
+    - User clicks the 'Sign up' link.
+    - User fills out the registration form with valid details.
+    - User clicks the 'CREATE ACCOUNT' button.
+  - Expected Result:
+    - User is successfully registered and redirected to the account creation confirmation page.
+
+- Test Case Title: Invalid Email in Sign-Up
+  - Steps to Reproduce:
+    - User opens the PrimeWin homepage.
+    - User clicks the 'Sign up' link.
+    - User fills out the registration form with an invalid email address.
+    - User clicks the 'CREATE ACCOUNT' button.
+  - Expected Result:
+    - An error message is displayed indicating that the email address is invalid.
+
+- Test Case Title: Existing Email in Sign-Up
+  - Steps to Reproduce:
+    - User opens the PrimeWin homepage.
+    - User clicks the 'Sign up' link.
+    - User fills out the registration form with an email address that already exists in the system.
+    - User clicks the 'CREATE ACCOUNT' button.
+  - Expected Result:
+    - An error message is displayed indicating that the email address is already in use.
+
+- Test Case Title: Empty Fields in Sign-Up
+  - Steps to Reproduce:
+    - User opens the PrimeWin homepage.
+    - User clicks the 'Sign up' link.
+    - User leaves the required fields empty.
+    - User clicks the 'CREATE ACCOUNT' button.
+  - Expected Result:
+    - Error messages are displayed indicating that the required fields are empty.
+
+- Test Case Title: Special Characters in Sign-Up
+  - Steps to Reproduce:
+    - User opens the PrimeWin homepage.
+    - User clicks the 'Sign up' link.
+    - User fills out the registration form with special characters in the required fields.
+    - User clicks the 'CREATE ACCOUNT' button.
+  - Expected Result:
+    - The system handles special characters appropriately (either accepts them or displays a relevant error message depending on the system's design).
+
+- Test Case Title: Forgot Password Recovery
+  - Steps to Reproduce:
+    - User opens the PrimeWin homepage.
+    - User clicks the 'Forgot password?' link.
+    - User enters their email address.
+    - User clicks the 'RECover Password' button.
+  - Expected Result:
+    - User receives a password reset email (if the email address is associated with an account in the system).
+
+- Test Case Title: Password Reset Confirmation
+  - Steps to Reproduce:
+    - User receives the password reset email.
+    - User clicks the link provided in the email.
+    - User enters and confirms a new password.
+  - Expected Result:
+    - User's password is successfully updated and they are logged in to their account.
