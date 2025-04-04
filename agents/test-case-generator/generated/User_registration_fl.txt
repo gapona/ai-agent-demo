@@ -1,0 +1,88 @@
+ - Test Case Title: Verify user registration with valid details
+  - Steps to Reproduce:
+    - User opens the homepage
+    - User clicks on the "Sign Up" button
+    - User enters a unique email address in the email field
+    - User enters a strong password in the password field
+    - User confirms the password by typing the same strong password in the confirm password field
+    - User clicks the "Sign Up" button
+  - Expected Result:
+    - An account creation success message is displayed
+    - The user is redirected to the homepage
+
+- Test Case Title: Verify user registration with an existing email
+  - Steps to Reproduce:
+    - User opens the homepage
+    - User clicks on the "Sign Up" button
+    - User enters an existing email address in the email field
+    - User enters a strong password in the password field
+    - User confirms the password by typing the same strong password in the confirm password field
+    - User clicks the "Sign Up" button
+  - Expected Result:
+    - An error message is displayed informing the user that the email is already registered
+
+- Test Case Title: Verify user registration with missing email
+  - Steps to Reproduce:
+    - User opens the homepage
+    - User clicks on the "Sign Up" button
+    - User leaves the email field blank
+    - User enters a strong password in the password field
+    - User confirms the password by typing the same strong password in the confirm password field
+    - User clicks the "Sign Up" button
+  - Expected Result:
+    - An error message is displayed informing the user that the email field is required
+
+- Test Case Title: Verify user registration with short password
+  - Steps to Reproduce:
+    - User opens the homepage
+    - User clicks on the "Sign Up" button
+    - User enters a unique email address in the email field
+    - User enters a short password in the password field (less than the minimum characters)
+    - User confirms the password by typing the same short password in the confirm password field
+    - User clicks the "Sign Up" button
+  - Expected Result:
+    - An error message is displayed informing the user that the password must meet the minimum character requirement
+
+- Test Case Title: Verify user registration with different passwords
+  - Steps to Reproduce:
+    - User opens the homepage
+    - User clicks on the "Sign Up" button
+    - User enters a unique email address in the email field
+    - User enters a strong password in the password field
+    - User enters a different strong password in the confirm password field
+    - User clicks the "Sign Up" button
+  - Expected Result:
+    - An error message is displayed informing the user that the passwords do not match
+
+- Test Case Title: Verify user registration with incorrect password format
+  - Steps to Reproduce:
+    - User opens the homepage
+    - User clicks on the "Sign Up" button
+    - User enters a unique email address in the email field
+    - User enters a password containing only numeric characters in the password field
+    - User confirms the password by typing the same password with numeric characters in the confirm password field
+    - User clicks the "Sign Up" button
+  - Expected Result:
+    - An error message is displayed informing the user that the password must contain a mix of letters, numbers, and special characters
+
+- Test Case Title: Verify user registration with inactive account
+  - Steps to Reproduce:
+    - User opens the homepage
+    - An inactive account is created by manually setting the status to inactive in the database
+    - User clicks on the "Sign In" button
+    - User enters the email associated with the created inactive account in the email field
+    - User enters the password for the inactive account in the password field
+    - User clicks the "Sign In" button
+  - Expected Result:
+    - An error message is displayed informing the user that the account is inactive
+
+- Test Case Title: Verify user registration with expired account
+  - Steps to Reproduce:
+    - User opens the homepage
+    - An expired account is created by manually setting the expiration date of the account to the past in the database
+    - User clicks on the "Sign In" button
+    - User enters the email associated with the expired account in the email field
+    - User enters the password for the expired account in the password field
+    - User clicks the "Sign In" button
+  - Expected Result:
+    - An error message is displayed informing the user that the account has expired

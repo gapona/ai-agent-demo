@@ -5,7 +5,8 @@
   "scripts": {
     "generate": "dotenv -e config.env -- tsx agents/test-case-generator/Test-case-generator.ts",
     "generate:image": "dotenv -e config.env -- tsx agents/test-case-generator/Test-case-generator.ts --image",
-    "generate:video": "dotenv -e config.env -- tsx agents/test-case-generator/Test-case-generator.ts --video"
+    "generate:video": "dotenv -e config.env -- tsx agents/test-case-generator/Test-case-generator.ts --video",
+    "generate:gherkin": "dotenv -e config.env -- tsx agents/test-case-generator/Test-case-generator.ts --export"
   },
   "dependencies": {
     "dotenv": "^16.4.7",

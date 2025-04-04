@@ -1,7 +1,7 @@
 import OpenAI from 'openai';
 import { config } from 'dotenv';
 
-config(); // Подгружаем переменные из config.env
+config();
 
 export class OpenAIClient {
     private client: OpenAI;
