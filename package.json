@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "generate": "ts-node --loader ts-node/esm agents/test-case-generator/cli.ts"
+    "generate": "dotenv -e config.env -- tsx agents/test-case-generator/Test-case-generator.ts",
+    "generate:image": "dotenv -e config.env -- tsx agents/test-case-generator/Test-case-generator.ts --image",
+    "generate:video": "dotenv -e config.env -- tsx agents/test-case-generator/Test-case-generator.ts --video"
   },
   "dependencies": {
     "dotenv": "^16.4.7",
@@ -14,6 +16,7 @@
   "devDependencies": {
     "@types/fluent-ffmpeg": "^2.1.27",
     "@types/node": "^22.13.17",
+    "dotenv-cli": "^8.0.0",
     "ts-node": "^10.9.2",
     "tsx": "^4.19.3",
     "typescript": "^5.8.2"
