@@ -9,3 +9,4 @@
 | 📄 Export Gherkin from screenshot test cases      | `npm run generate:gherkin -- "Img"`                                                             |
 | 📄 Export Gherkin from video test cases           | `npm run generate:gherkin -- "Rec"`                                                             |
 | 🛠️ Generate step definitions from .feature files | `npm run generate:steps -- ./agents/test-case-generator/generated/User_registration_fl.feature` |
+| 🧪 Generate api test from example response        | `npm run generate:from-response`                                                                |
