@@ -1,88 +1,79 @@
- - Test Case Title: Verify user registration with valid details
-  - Steps to Reproduce:
-    - User opens the homepage
-    - User clicks on the "Sign Up" button
-    - User enters a unique email address in the email field
-    - User enters a strong password in the password field
-    - User confirms the password by typing the same strong password in the confirm password field
-    - User clicks the "Sign Up" button
-  - Expected Result:
-    - An account creation success message is displayed
-    - The user is redirected to the homepage
+ 1. Test Case Title: Verifying Homepage Loads Correctly
+   - Steps to Reproduce:
+     - Open the browser
+     - Navigate to the homepage (www.example.com)
+   - Expected Result:
+     - The homepage loads successfully with the expected layout
 
-- Test Case Title: Verify user registration with an existing email
-  - Steps to Reproduce:
-    - User opens the homepage
-    - User clicks on the "Sign Up" button
-    - User enters an existing email address in the email field
-    - User enters a strong password in the password field
-    - User confirms the password by typing the same strong password in the confirm password field
-    - User clicks the "Sign Up" button
-  - Expected Result:
-    - An error message is displayed informing the user that the email is already registered
+2. Test Case Title: User Navigation to Registration Page
+   - Steps to Reproduce:
+     - Open the homepage
+     - Click on the "Register" button
+   - Expected Result:
+     - Navigation to the registration page is successful
 
-- Test Case Title: Verify user registration with missing email
-  - Steps to Reproduce:
-    - User opens the homepage
-    - User clicks on the "Sign Up" button
-    - User leaves the email field blank
-    - User enters a strong password in the password field
-    - User confirms the password by typing the same strong password in the confirm password field
-    - User clicks the "Sign Up" button
-  - Expected Result:
-    - An error message is displayed informing the user that the email field is required
+3. Test Case Title: Verifying Registration Form Loads Correctly
+   - Steps to Reproduce:
+     - Navigate to the registration page
+   - Expected Result:
+     - The registration form loads successfully with all input fields and submit button
 
-- Test Case Title: Verify user registration with short password
-  - Steps to Reproduce:
-    - User opens the homepage
-    - User clicks on the "Sign Up" button
-    - User enters a unique email address in the email field
-    - User enters a short password in the password field (less than the minimum characters)
-    - User confirms the password by typing the same short password in the confirm password field
-    - User clicks the "Sign Up" button
-  - Expected Result:
-    - An error message is displayed informing the user that the password must meet the minimum character requirement
+4. Test Case Title: User Fills Out Registration Form with Valid Details
+   - Steps to Reproduce:
+     - Navigate to the registration page
+     - Enter a valid first name in the first name input field
+     - Enter a valid last name in the last name input field
+     - Enter a valid email address in the email input field
+     - Enter a valid password in the password input field
+     - Enter the same password in the confirm password input field
+     - Click the "Register" button
+   - Expected Result:
+     - The registration form submits successfully and the user is redirected to a confirmation page
 
-- Test Case Title: Verify user registration with different passwords
-  - Steps to Reproduce:
-    - User opens the homepage
-    - User clicks on the "Sign Up" button
-    - User enters a unique email address in the email field
-    - User enters a strong password in the password field
-    - User enters a different strong password in the confirm password field
-    - User clicks the "Sign Up" button
-  - Expected Result:
-    - An error message is displayed informing the user that the passwords do not match
+5. Test Case Title: User Cannot Register with Empty Fields
+   - Steps to Reproduce:
+     - Navigate to the registration page
+     - Click the "Register" button without filling any form fields
+   - Expected Result:
+     - The system displays an error message for each empty field
 
-- Test Case Title: Verify user registration with incorrect password format
-  - Steps to Reproduce:
-    - User opens the homepage
-    - User clicks on the "Sign Up" button
-    - User enters a unique email address in the email field
-    - User enters a password containing only numeric characters in the password field
-    - User confirms the password by typing the same password with numeric characters in the confirm password field
-    - User clicks the "Sign Up" button
-  - Expected Result:
-    - An error message is displayed informing the user that the password must contain a mix of letters, numbers, and special characters
+6. Test Case Title: User Cannot Register with Invalid Email Address
+   - Steps to Reproduce:
+     - Navigate to the registration page
+     - Enter an invalid email address in the email input field
+     - Enter a valid password in the password input field
+     - Click the "Register" button
+   - Expected Result:
+     - The system displays an error message for the email address field
 
-- Test Case Title: Verify user registration with inactive account
-  - Steps to Reproduce:
-    - User opens the homepage
-    - An inactive account is created by manually setting the status to inactive in the database
-    - User clicks on the "Sign In" button
-    - User enters the email associated with the created inactive account in the email field
-    - User enters the password for the inactive account in the password field
-    - User clicks the "Sign In" button
-  - Expected Result:
-    - An error message is displayed informing the user that the account is inactive
+7. Test Case Title: User Cannot Register with Different Passwords
+   - Steps to Reproduce:
+     - Navigate to the registration page
+     - Enter a valid first name in the first name input field
+     - Enter a valid last name in the last name input field
+     - Enter a valid email address in the email input field
+     - Enter a password in the password input field
+     - Enter a different password in the confirm password input field
+     - Click the "Register" button
+   - Expected Result:
+     - The system displays an error message for the confirm password input field
 
-- Test Case Title: Verify user registration with expired account
-  - Steps to Reproduce:
-    - User opens the homepage
-    - An expired account is created by manually setting the expiration date of the account to the past in the database
-    - User clicks on the "Sign In" button
-    - User enters the email associated with the expired account in the email field
-    - User enters the password for the expired account in the password field
-    - User clicks the "Sign In" button
-  - Expected Result:
-    - An error message is displayed informing the user that the account has expired
+8. Test Case Title: User Can See Terms and Conditions Link
+   - Steps to Reproduce:
+     - Navigate to the registration page
+   - Expected Result:
+     - The terms and conditions link is visible and clickable
+
+9. Test Case Title: User Clicks Terms and Conditions Link
+   - Steps to Reproduce:
+     - Navigate to the registration page
+     - Click the terms and conditions link
+   - Expected Result:
+     - Redirection to the terms and conditions page is successful
+
+10. Test Case Title: User Verification Email is Sent for Registration
+   - Steps to Reproduce:
+     - Navigate to the registration page
+     - Fill out the registration form with valid details and submit it
+   - Expected Result:
+     - The user receives an email with a verification link in their registered email address within a specified time frame.

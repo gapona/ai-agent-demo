@@ -1,7 +1,7 @@
 import fs from 'fs';
 import ffmpegPath from 'ffmpeg-static';
 import fluentFfmpeg from 'fluent-ffmpeg';
-import { GeminiClient } from '../ai-clients/GeminiClient';
+import { GeminiClient } from '../../ai-clients/GeminiClient';
 import { PromptBuilder } from '../prompt/PromptBuilder';
 
 export class VideoAnalyzer {

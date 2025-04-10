@@ -1,5 +1,5 @@
 import fs from 'fs';
-import { GeminiClient } from '../ai-clients/GeminiClient';
+import { GeminiClient } from '../../ai-clients/GeminiClient';
 import { PromptBuilder } from '../prompt/PromptBuilder';
 
 export class ImageAnalyzer {

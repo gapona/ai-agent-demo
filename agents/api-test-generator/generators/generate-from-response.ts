@@ -1,6 +1,13 @@
 import fs from 'fs';
 import path from 'path';
-import {ResponseAnalyzer} from '../analyzers/ResponseAnalyzer';
+import {config} from 'dotenv';
+import {OpenAIClient} from "../../ai-clients/OpenAIClient";
+import {ApiPromptBuilder} from "../prompt/ApiPromptBuilder";
+import {ResponseAnalyzer} from "../analyzers/ResponseAnalyzer";
+import {GeminiClient} from "../../ai-clients/GeminiClient";
+
+
+config();
 
 const responsePath = process.argv[2];
 if (!responsePath) {
@@ -8,14 +15,19 @@ if (!responsePath) {
     process.exit(1);
 }
 
-const response = JSON.parse(fs.readFileSync(responsePath, 'utf-8'));
+(async () => {
+    const response = JSON.parse(fs.readFileSync(responsePath, 'utf-8'));
 
-const testCode = ResponseAnalyzer.generateTestFromResponse(response);
+    const prompt = ApiPromptBuilder.forResponseAnalysis(response);
 
-const outputDir = path.join('agents', 'api-test-generator', 'generated');
-if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir, { recursive: true });
+    const ai = new GeminiClient();
+    const testCode = await ResponseAnalyzer.generateTestFromResponse(response); // ✅ async-метод
 
-const outputPath = path.join(outputDir, 'test-from-response.spec.ts');
-fs.writeFileSync(outputPath, testCode);
+    const outputDir = path.join('agents', 'api-test-generator', 'generated');
+    if (!fs.existsSync(outputDir)) fs.mkdirSync(outputDir, {recursive: true});
 
-console.log(`✅ Test file created: ${outputPath}`);
+    const outputPath = path.join(outputDir, 'test-from-response.spec.ts');
+    fs.writeFileSync(outputPath, testCode);
+
+    console.log(`✅ AI-based test file created: ${outputPath}`);
+})();
