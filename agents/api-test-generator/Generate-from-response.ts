@@ -1,10 +1,10 @@
 import fs from 'fs';
 import path from 'path';
 import {config} from 'dotenv';
-import {OpenAIClient} from "../../ai-clients/OpenAIClient";
-import {ApiPromptBuilder} from "../prompt/ApiPromptBuilder";
-import {ResponseAnalyzer} from "../analyzers/ResponseAnalyzer";
-import {GeminiClient} from "../../ai-clients/GeminiClient";
+import {OpenAIClient} from "../ai-clients/OpenAIClient";
+import {ApiPromptBuilder} from "./prompt/ApiPromptBuilder";
+import {ResponseAnalyzer} from "./analyzers/ResponseAnalyzer";
+import {GeminiClient} from "../ai-clients/GeminiClient";
 
 
 config();

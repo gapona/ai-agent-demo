@@ -8,7 +8,7 @@
     "generate:video": "dotenv -e config.env -- tsx agents/test-case-generator/Test-case-generator.ts --video",
     "generate:gherkin": "dotenv -e config.env -- tsx agents/test-case-generator/Test-case-generator.ts --export",
     "generate:steps": "tsx agents/test-case-generator/gherkin/GherkinStepGenerator.ts",
-    "generate:from-response": "dotenv -e config.env -- tsx agents/api-test-generator/generators/generate-from-response.ts ./agents/api-test-generator/input/response.json"
+    "generate:from-response": "dotenv -e config.env -- tsx agents/api-test-generator/Generate-from-response.ts ./agents/api-test-generator/input/response.json"
   },
   "dependencies": {
     "@playwright/test": "^1.51.1",
